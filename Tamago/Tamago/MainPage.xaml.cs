@@ -82,12 +82,8 @@ namespace Tamago
             var creatureDataStore = DependencyService.Get<Interface1<Creature>>();
             creatureDataStore.UpdateItem(MyCreature);
 
-            hungryText.Text = MyCreature.HungerText; //wip, kijken of ik iets anders dan binding kan gebruiken
             hungryBar.Progress = MyCreature.Hunger;
-
-            thirstyText.Text = MyCreature.ThirstText;
             thirstyBar.Progress = MyCreature.Thirst;
-
             thirstyBar.Progress = MyCreature.Thirst;
             boredomBar.Progress = MyCreature.Boredom;
             lonelyBar.Progress = MyCreature.Lonely;
@@ -212,7 +208,6 @@ namespace Tamago
         public float GetHunger()
         {
             float currentHunger = MyCreature.Hunger;
-            hungryText.Text = MyCreature.HungerText;
             hungryBar.Progress = MyCreature.Hunger;
             return currentHunger;
         }

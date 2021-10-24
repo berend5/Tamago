@@ -18,13 +18,13 @@
             </Grid.ColumnDefinitions>
 
             <StackLayout Grid.Row="0" Grid.Column="0">
-                <Label x:Name="hungryText" Text="hungerText" FontSize="10" HorizontalOptions="Center" TextColor="Red"/>
+                <Label Text="{Binding MyCreature.BoredomText, Mode=OneWay}" FontSize="10" HorizontalOptions="Center" TextColor="Red"/>
                 <ProgressBar x:Name="hungryBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
                 <Button Text="HUNGER" Clicked="Button_Feed"/>
             </StackLayout>
 
             <StackLayout Grid.Row="1" Grid.Column="0">
-                <Label x:Name="thirstyText" Text="thirsttext" FontSize="10" HorizontalOptions="Center" TextColor="Red"/>
+                <Label Text="{Binding MyCreature.BoredomText, Mode=OneWay}" FontSize="10" HorizontalOptions="Center" TextColor="Red"/>
                 <ProgressBar x:Name="thirstyBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
                 <Button Text="THIRST" Clicked="Button_GiveDrink"/>
             </StackLayout>
