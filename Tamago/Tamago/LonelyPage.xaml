@@ -7,7 +7,7 @@
         <StackLayout>
             <Label Text="PLAYGROUND" FontSize="20" HorizontalOptions="Center"/>
             <Label x:Name="currentLoneliness" Text="yo" FontSize="20"  HorizontalOptions="Center"/>
-            <ProgressBar x:Name="lonelyBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
+            <ProgressBar x:Name="lonelyBar" ProgressColor="Red" BackgroundColor="Transparent" ScaleX="0.9" ScaleY="1"/>
             <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="180"/>

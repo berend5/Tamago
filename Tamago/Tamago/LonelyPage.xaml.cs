@@ -12,11 +12,13 @@ namespace Tamago
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LonelyPage : ContentPage
     {
-        public MainPage mainPage = new MainPage();
+        public MainPage mainPage;
         private bool inPg;
         private bool isMoving;
-        public LonelyPage()
+
+        public LonelyPage(MainPage newMainPage)
         {
+            mainPage = newMainPage;
             InitializeComponent();
             ShowLonely();
         }

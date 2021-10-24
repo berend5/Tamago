@@ -6,7 +6,7 @@
         <StackLayout>
             <Label Text="BOREDOM PAGE" FontSize="20" HorizontalOptions="Center"/>
             <Label x:Name="currentBoredom" Text="yo" FontSize="20"  HorizontalOptions="Center"/>
-            <ProgressBar x:Name="boredomBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
+            <ProgressBar x:Name="boredomBar" ProgressColor="Red" BackgroundColor="Transparent" ScaleX="0.9" ScaleY="1"/>
             <Label Text="Play a game with your stickman to entertain him! Click when the green square appears on your screen!" 
                    FontSize="13" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="15"/>
             <ImageButton x:Name="gameButton" Source="boredombutton" Clicked="Button_Pressed"/>

@@ -12,12 +12,13 @@ namespace Tamago
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SleepPage : ContentPage
     {
-        public MainPage mainPage = new MainPage();
+        public MainPage mainPage;
 
         public bool asleep = false;
-        public SleepPage()
+        public SleepPage(MainPage newMainPage)
         {
-            asleep = false;
+            mainPage = newMainPage;
+            asleep = false; 
             InitializeComponent();
             StartCountdown();
             ShowTired();
@@ -25,7 +26,7 @@ namespace Tamago
 
         public async void StartCountdown()
         {
-            if(!asleep) await Task.Delay(5000);
+            if(!asleep) await Task.Delay(60000);
             asleep = true;
             await Task.Delay(1000);
             mainPage.AddTired();

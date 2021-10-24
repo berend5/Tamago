@@ -12,9 +12,10 @@ namespace Tamago
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BoredomPage : ContentPage
     {
-        public MainPage mainPage = new MainPage();
-        public BoredomPage()
+        public MainPage mainPage;
+        public BoredomPage(MainPage newMainPage)
         {
+            mainPage = newMainPage;
             InitializeComponent();
             StartTimer();
             ShowBoredom();

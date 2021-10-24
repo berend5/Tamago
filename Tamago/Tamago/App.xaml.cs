@@ -23,7 +23,7 @@ namespace Tamago
             var wakeTime = DateTime.Now;
 
             timeAsleep = wakeTime - sleepTime;
-            float hours = Convert.ToSingle(timeAsleep.TotalSeconds);
+            float hours = Convert.ToSingle(timeAsleep.TotalHours);
             creature.DecreaseStatsFromSleeptime(hours);
         }
 

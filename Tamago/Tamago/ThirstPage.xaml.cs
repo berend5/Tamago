@@ -15,11 +15,11 @@ namespace Tamago
         public bool canType;
         public string playerPW;
         public string password;
+        public MainPage mainPage;
 
-
-        public MainPage mainPage = new MainPage();
-        public ThirstPage()
+        public ThirstPage(MainPage newMainPage)
         {
+            mainPage = newMainPage;
             InitializeComponent();
             StartGame();
             ShowThirst();

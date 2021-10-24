@@ -6,7 +6,7 @@
         <StackLayout>
             <Label Text="SLEEPING PAGE" FontSize="20" HorizontalOptions="Center"/>
             <Label x:Name="currentTired" Text="yo" FontSize="20"  HorizontalOptions="Center"/>
-            <ProgressBar x:Name="tiredBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
+            <ProgressBar x:Name="tiredBar" ProgressColor="Red" BackgroundColor="Transparent" ScaleX="0.9" ScaleY="1"/>
             <Label Text="Don't touch your phone for 1 minute so your stickman can get some rest!" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10"/>
             <Image Source="sleepingimage" Scale="0.8"/>
         </StackLayout>

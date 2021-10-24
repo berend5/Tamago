@@ -12,11 +12,12 @@ namespace Tamago
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FeedPage : ContentPage
     {
-        public MainPage mainPage = new MainPage();
         uint moveSpeed = 500;
+        public MainPage mainPage;
 
-        public FeedPage()
+        public FeedPage(MainPage newMainPage)
         {
+            mainPage = newMainPage;
             InitializeComponent();
             MoveButton();
             ShowHunger();

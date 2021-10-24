@@ -6,7 +6,7 @@
     <StackLayout>
         <Label Text="FEEDING PAGE" FontSize="20" HorizontalOptions="Center"/>
         <Label x:Name="currentHunger"  Text="yo" FontSize="20" HorizontalOptions="Center"/>
-        <ProgressBar x:Name="hungryBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
+        <ProgressBar x:Name="hungryBar" ProgressColor="Red" BackgroundColor="Transparent" ScaleX="0.9" ScaleY="1"/>
         <Button x:Name="feedingbutton" Text="FEED" Clicked="Button_GiveFood" HorizontalOptions="Center"/>
     </StackLayout>
 </ContentPage>

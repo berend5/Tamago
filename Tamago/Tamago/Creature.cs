@@ -7,6 +7,8 @@ namespace Tamago
 {
     public class Creature : INotifyPropertyChanged
     {
+        public MainPage mainPage;
+
         public string Name { get; set; }
         public float Hunger { get; set; } = .0f;
         public float Thirst { get; set; } = .0f;
@@ -14,6 +16,7 @@ namespace Tamago
         public float Lonely { get; set; } = .0f;
         public float Annoyed { get; set; } = .0f;
         public float Tired { get; set; } = .0f;
+        public float Overall { get; set; } = .0f;
 
         public void DecreaseStatsFromSleeptime(float downTime)
         {
@@ -43,8 +46,8 @@ namespace Tamago
         {
             >= 1.0f => "im gonna die from hunger",
             > 0.75f => "im very hungry",
-            > 0.5f => "getting hungry",
-            >= .0f => "",
+            > 0.6f => "getting hungry",
+            >= .0f => "no action required",
             _ => "shouldnt be possible"
         };
 
@@ -52,8 +55,8 @@ namespace Tamago
         {
             >= 1.0f => "im gonna die from thirst",
             > 0.75f => "im very thirsty",
-            > 0.5f => "getting thirsty",
-            >= .0f => "",
+            > 0.6f => "getting thirsty",
+            >= .0f => "no action required",
             _ => "shouldnt be possible"
         };
 
@@ -61,8 +64,8 @@ namespace Tamago
         {
             >= 1.0f => "im gonna die from boredom",
             > 0.75f => "im very bored",
-            > 0.5f => "getting bored",
-            >= .0f => "",
+            > 0.6f => "getting bored",
+            >= .0f => "no action required",
             _ => "shouldnt be possible"
         };
 
@@ -70,8 +73,8 @@ namespace Tamago
         {
             >= 1.0f => "im gonna die from loneliness",
             > 0.75f => "im very lonely",
-            > 0.5f => "getting lonely",
-            >= .0f => "",
+            > 0.6f => "getting lonely",
+            >= .0f => "no action required",
             _ => "shouldnt be possible"
         };
 
@@ -79,8 +82,8 @@ namespace Tamago
         {
             >= 1.0f => "im gonna die from being so annoyed",
             > 0.75f => "im very annoyed",
-            > 0.5f => "getting annoyed",
-            >= .0f => "",
+            > 0.6f => "getting annoyed",
+            >= .0f => "no action required",
             _ => "shouldnt be possible"
         };
 
@@ -88,8 +91,8 @@ namespace Tamago
         {
             >= 1.0f => "im gonna die from being tired",
             > 0.75f => "im very tired",
-            > 0.5f => "getting tired",
-            >= .0f => "",
+            > 0.6f => "getting tired",
+            >= .0f => "no action required",
             _ => "shouldnt be possible"
         };
 

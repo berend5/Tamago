@@ -11,6 +11,7 @@ namespace Tamago
 {
     public partial class MainPage : ContentPage
     {
+        public MainPage mainPage;
         public Creature MyCreature { get; set; } = new Creature
         {
             Name = "Creature",
@@ -19,19 +20,22 @@ namespace Tamago
             Boredom = .0f,
             Tired = .0f,
             Lonely = .0f,
-            Thirst = .0f
+            Thirst = .0f,
+            Overall = .0f
         };
 
         public MainPage()
         {
+            mainPage = this;
             OnStartup();
+            QuickFix();
             BindingContext = this;
 
             InitializeComponent();
 
             var timer = new System.Timers.Timer
             {
-                Interval = 50 * 60,
+                Interval = 1000 * 120,
                 AutoReset = true
             };
             timer.Elapsed += Timer_Elapsed;
@@ -60,6 +64,14 @@ namespace Tamago
             MyCreature.Lonely += 0.1f;
             MyCreature.Thirst += 0.1f;
 
+            MyCreature.Overall = MyCreature.Hunger + MyCreature.Annoyed + MyCreature.Boredom + MyCreature.Tired + MyCreature.Lonely + MyCreature.Thirst;
+
+            UpdateCreature();
+        }
+
+        public async void QuickFix()
+        {
+            await Task.Delay(1000);
             UpdateCreature();
         }
 
@@ -90,79 +102,93 @@ namespace Tamago
             annoyedBar.Progress = MyCreature.Annoyed;
             tiredBar.Progress = MyCreature.Tired;
 
-            if (MyCreature.Hunger >= 0.5f)
+            overallBar.Progress = MyCreature.Overall / 6f;
+
+            hungryBar.ProgressColor = MyCreature.Hunger >= 0.5f ? Color.Red : Color.LightGreen;
+
+            thirstyBar.ProgressColor = MyCreature.Thirst >= 0.5f ? Color.Red : Color.LightGreen;
+
+            boredomBar.ProgressColor = MyCreature.Boredom >= 0.5f ? Color.Red : Color.LightGreen;
+
+            lonelyBar.ProgressColor = MyCreature.Lonely >= 0.5f ? Color.Red : Color.LightGreen;
+
+            annoyedBar.ProgressColor = MyCreature.Annoyed >= 0.5f ? Color.Red : Color.LightGreen;
+
+            tiredBar.ProgressColor = MyCreature.Tired >= 0.5f ? Color.Red : Color.LightGreen;
+
+            if(MyCreature.HungerText != "no action required")
             {
-                hungryBar.ProgressColor = Color.Red;
+                hungerC.TextColor = Color.Red;
             }
             else
             {
-                hungryBar.ProgressColor = Color.LightGreen;
+                hungerC.TextColor = Color.LightGreen;
             }
 
-            if (MyCreature.Thirst >= 0.5f)
+            if(MyCreature.ThirstText != "no action required")
             {
-                thirstyBar.ProgressColor = Color.Red;
+                thirstC.TextColor = Color.Red;
             }
             else
             {
-                thirstyBar.ProgressColor = Color.LightGreen;
+                thirstC.TextColor = Color.LightGreen;
             }
 
-            if (MyCreature.Boredom >= 0.5f)
+            if(MyCreature.BoredomText != "no action required")
             {
-                boredomBar.ProgressColor = Color.Red;
+                boredC.TextColor = Color.Red;
             }
             else
             {
-                boredomBar.ProgressColor = Color.LightGreen;
+                boredC.TextColor = Color.LightGreen;
             }
 
-            if (MyCreature.Lonely >= 0.5f)
+            if(MyCreature.AnnoyedText != "no action required")
             {
-                lonelyBar.ProgressColor = Color.Red;
+                annoyedC.TextColor = Color.Red;
             }
             else
             {
-                lonelyBar.ProgressColor = Color.LightGreen;
+                annoyedC.TextColor = Color.LightGreen;
             }
 
-            if (MyCreature.Annoyed >= 0.5f)
+            if(MyCreature.TiredText != "no action required")
             {
-                annoyedBar.ProgressColor = Color.Red;
+                tiredC.TextColor = Color.Red;
             }
             else
             {
-                annoyedBar.ProgressColor = Color.LightGreen;
+                tiredC.TextColor = Color.LightGreen;
             }
 
-            if (MyCreature.Tired >= 0.5f)
+            if(MyCreature.LonelyText != "no action required")
             {
-                tiredBar.ProgressColor = Color.Red;
+                lonelyC.TextColor = Color.Red;
             }
             else
             {
-                tiredBar.ProgressColor = Color.LightGreen;
+                lonelyC.TextColor = Color.LightGreen;
             }
         }
 
         void Button_Feed(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new FeedPage());
+            Navigation.PushAsync(new FeedPage(mainPage));
         }
 
         void Button_GiveDrink(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new ThirstPage());
+            Navigation.PushAsync(new ThirstPage(mainPage));
         }
 
         void Button_Entertain(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new BoredomPage());
+            Navigation.PushAsync(new BoredomPage(mainPage));
         }
 
         void Button_Lonely(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new LonelyPage());
+            Navigation.PushAsync(new LonelyPage(mainPage));
         }
 
         void Button_Annoyed(object sender, System.EventArgs e)
@@ -172,7 +198,7 @@ namespace Tamago
 
         void Button_Sleep(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new SleepPage()); 
+            Navigation.PushAsync(new SleepPage(mainPage)); 
         }
 
         public void AddHunger()
