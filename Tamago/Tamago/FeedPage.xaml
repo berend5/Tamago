@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:tamago="clr-namespace:Tamago"
+             x:Class="Tamago.FeedPage">
+
+    <StackLayout>
+        <Label Text="FEEDING PAGE" FontSize="20" HorizontalOptions="Center"/>
+        <Label x:Name="currentHunger"  Text="yo" FontSize="20" HorizontalOptions="Center"/>
+        <ProgressBar x:Name="hungryBar" ProgressColor="Red" BackgroundColor="White" ScaleX="0.5" ScaleY="0.6"/>
+        <Button x:Name="feedingbutton" Text="FEED" Clicked="Button_GiveFood" HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>

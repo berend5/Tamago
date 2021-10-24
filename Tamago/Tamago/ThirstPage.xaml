@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tamago.ThirstPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="THIRST PAGE" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label x:Name="currentThirst" Text="yo" FontSize="20"  HorizontalOptions="Center"/>
+            <Label x:Name="newNumber" Text="Test" FontSize="50" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            <Button Text="RESET PASSWORD" Clicked="ResetPW" HorizontalOptions="Center" WidthRequest="250"/>
+            <Button Text="ENTER PASSWORD" Clicked="EnterPW" HorizontalOptions="Center" WidthRequest="250"/>
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout Grid.Row="0" Grid.Column="0">
+                    <Button Text="1" Clicked="Button_1" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="1">
+                    <Button Text="2" Clicked="Button_2" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="2">
+                    <Button Text="3" Clicked="Button_3" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0">
+                    <Button Text="4" Clicked="Button_4" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Button Text="5" Clicked="Button_5" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="2">
+                    <Button Text="6" Clicked="Button_6" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0">
+                    <Button Text="7" Clicked="Button_7" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1">
+                    <Button Text="8" Clicked="Button_8" FontSize="40"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="2">
+                    <Button Text="9" Clicked="Button_9" FontSize="40"/>
+                </StackLayout>
+            </Grid>
+            <Button Text="TRY AGAIN" Clicked="CallGameStart" HorizontalOptions="Center" WidthRequest="250"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

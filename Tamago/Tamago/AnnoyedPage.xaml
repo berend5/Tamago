@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tamago.AnnoyedPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="ANNOYED PAGE" FontSize="20" HorizontalOptions="Center"/>
+            <Label Text="Never stay on this app for too long! The stickman appreciates your company, but he wants some alone time too! His annoyed score will go up while you're using the app and decrease while you're afk."
+                   Padding="15" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            <Image Source="leavemealone" Scale="0.8"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
